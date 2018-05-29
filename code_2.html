@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bodymovin Demo</title>
+    <script type="text/javascript" src="lottie.js"></script>
+</head>
+<style>
+    #animation{
+        background-color:#07f;
+        width: 300px;
+        height: 300px; 
+    }
+</style>
+<body>
+    <div id="animation"></div>
+    <script>
+
+lottie.loadAnimation({
+            path:'data2.json',   //json文件路径
+            loop:0,           //播放次数
+            autoplay:false,      //自动播放
+            name:"animation",   //命名动画
+            renderer:'canvas',  //渲染方式，有"html"、"canvas"和"svg"三种
+            container:document.getElementById('animation'),
+        });
+
+        document.getElementById("animation").addEventListener("mouseover",function(){
+            lottie.play("animation");
+        })
+        document.getElementById("animation").addEventListener("mouseout",function(){
+            lottie.stop("animation");
+        })
+    </script>
+</body>
+</html>
